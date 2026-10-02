@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+  font-family:Arial,sans-serif; background:linear-gradient(135deg,#ffd6e7,#fff0f6,#ffd1dc);
+  overflow-x:hidden; color:#5a1831; padding: 20px 0;
+}
+.card{
+  width:min(92%,420px); padding:30px 24px; text-align:center;
+  background:rgba(255,255,255,.88); border-radius:28px;
+  box-shadow:0 15px 45px rgba(120,30,70,.18);
+  position:relative; z-index:2;
+}
+h1{font-size:26px;margin:0 0 15px}
+p{font-size:16px;line-height:1.65;margin:10px 0}
+
+/* Photo Container Styling */
+.photo-container {
+  width: 240px;
+  height: 320px;
+  margin: 15px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.photo-container:hover {
+  transform: scale(1.04);
+}
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tap-text {
+  font-size: 13px;
+  color: #a8436b;
+  font-style: italic;
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+#message{display:none;margin-top:20px;border-top:1px dashed #ff5c8a;padding-top:15px}
+.heart{position:fixed;bottom:-30px;font-size:22px;animation:float 6s linear infinite;opacity:.75;z-index: 1;}
+@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>💖 Happy Boyfriend Day, My Love! 💖</h1>
+  <p><b>I love you 😘❤️</b></p>
+  <p>Aap mujhe pyaar karte ho ki nahi, ye mujhe nahi pata 😉<br>
+  Par main aapko bahut pyaar karti hoon 😘❤️</p>
+  
+  <!-- Isme tumhari photo ka sahi link maine fix kar diya hai -->
+  <div class="photo-container" onclick="showLove()">
+    <img src="https://imgbox.com" alt="Our Beautiful Memories">
+  </div>
+  <p class="tap-text">☝️ Photo par tap karo surprise ke liye! 🥰</p>
+
+  <div id="message">
+    <p><b>You are my life, baby 💖</b></p>
+    <p>Main chahti hoon ki aapki saari wishes puri ho 🥰<br>
+    Sabki sab! ✨<br>
+    Aur aapke saath hamesha achha hi ho ❤️</p>
+    <p>Ohh, my love 😘</p>
+    <p>I really want to hug you and kiss you 🤭😝❤️<br>
+    Par aap mujhse door ho...</p>
+    <p>Koi na 🥰😘❤️<br>
+    Distance chahe jitna bhi ho,<br>
+    aap mere liye hamesha special rahoge. 💗</p>
+    <h2>❤️ K 💗 B ❤️</h2>
+  </div>
+</div>
+<script>
+function showLove(){
+  document.getElementById('message').style.display='block';
+  
+  setTimeout(() => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }, 100);
+
+  for(let i=0;i<30;i++){
+    setTimeout(() => {
+      const h=document.createElement('div');
+      h.className='heart'; h.textContent=['❤️','💗','💕','💖','🥰'][Math.floor(Math.random()*5)];
+      h.style.left=Math.random()*100+'vw';
+      h.style.animationDuration=(3+Math.random()*4)+'s';
+      h.style.fontSize=(16+Math.random()*18)+'px';
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),7000);
+    }, i * 100);
+  }
+}
+</script>
+</body>
+</html>
